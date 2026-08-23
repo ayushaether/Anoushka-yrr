@@ -5,6 +5,7 @@ import { WarmLight } from '@/components/ending/WarmLight';
 import { RoseBloom } from '@/components/ending/RoseBloom';
 import { GiftCard } from '@/components/ending/GiftCard';
 import { FinalMessage } from '@/components/ending/FinalMessage';
+import { WebsiteExperience } from '@/components/WebsiteExperience';
 
 // ─── Props ─────────────────────────────────────────────────────────────────
 
@@ -41,7 +42,7 @@ const LETTER_PARAGRAPHS = [
 
   "You’re actually not just a friend; you’re my built-in best friend. Whenever I talk to you, even for a few minutes, my whole mood changes. I don’t know how, maybe you got some kind of powers? Hmm..🧐",
 
-  "No filters, no fake vibes, just you. And as an introvert, having someone like you is truly a blessing... I could've written a poem instead of this, but I don't think any poem could do you justice. Yes sirrr! I'm a poet and writer.",
+     "No filters, no fake vibes, just you. And as an introvert, having someone like you is truly a blessing... I could've written a poem instead of this, but I don't think any poem could do you justice. Yes sirrr! I'm a poet and writer.",
 
   "Well, I could have just wished you like normal ppl, like texting 'happy b'day' or posting a story. Then what would be the difference between them and me? 😮‍💨",
 
@@ -52,15 +53,15 @@ const LETTER_PARAGRAPHS = [
   "I really don't know what else to say. I'm just grateful and ik it may kinda sound cringee? If so, really solly. I'm juust a geek I guess hehehehe!",
 
   '',
-“last thing I want to say………actually I”,
+"last thing I want to say………actually I",
 
   '',
 
-“LOVE….I LOVE”,
+  "LOVE….I LOVE",
 
   '',
 
-“MONEY,CASH AS MUCH AS CASH YOU CAN GIVE. Sorry jokeside”,
+  "MONEY,CASH AS MUCH AS CASH YOU CAN GIVE. Sorry jokeside",
   '',
 
   'Happy Birthday once again, Shriya. ❤️',
@@ -87,7 +88,8 @@ type Scene =
   | 'rose-grow'     // credits fades, rose stem grows
   | 'rose-bloom'    // petals open + SFX
   | 'final-message' // "Some memories don't fade. They simply bloom."
-  | 'done';
+  | 'done'
+  | 'website';
 
 // ─── Memory Jar ──────────────────────────────────────────────────────────────
 
@@ -286,6 +288,8 @@ export function Chapter9Epilogue({ fadeOutAudio, playGiftReadySfx, playTulipBloo
 
     // 5. Fade out
     add(() => setScene('done'), 25000);
+    // Start the separate website only after the complete rose ending has finished.
+    add(() => setScene('website'), 30000);
   }, [playTulipBloomSfx]);
 
   // ── Derived flags ───────────────────────────────────────────────────────
@@ -303,6 +307,7 @@ export function Chapter9Epilogue({ fadeOutAudio, playGiftReadySfx, playTulipBloo
   const showParticles = showRose;
   const showWarmLight = ['rose-bloom', 'final-message', 'done'].includes(scene);
   const showFinalMsg  = ['final-message', 'done'].includes(scene);
+  const showWebsite   = scene === 'website';
 
   // Dark overlay opacity
   const darkOpacity =
@@ -488,6 +493,10 @@ export function Chapter9Epilogue({ fadeOutAudio, playGiftReadySfx, playTulipBloo
 
       {/* ── Final message ── */}
       <FinalMessage visible={showFinalMsg} />
+
+      {/* ── Second website: starts after the entire rose ending ── */}
+      <WebsiteExperience visible={showWebsite} />
     </div>
   );
 }
+
