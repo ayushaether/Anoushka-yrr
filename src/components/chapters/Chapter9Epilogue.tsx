@@ -65,7 +65,7 @@ const LETTER_PARAGRAPHS = [
 
   '',
 
-  'Happy Birthday once again, Shriya. ❤️',
+  'Happy Birthday once again, Anoushka. ❤️',
 ];
 
 const PHOTO_ROTATIONS = [-3.2, 2.1, -1.8, 3.5];
@@ -391,7 +391,7 @@ export function Chapter9Epilogue({ fadeOutAudio, playGiftReadySfx, playTulipBloo
       </div>
 
       {/* ══════════════════════════════════════════════════════════
-          CREDITS — "Made with ❤️ by Anshu" (appears FIRST)
+          CREDITS — "Made with ❤️ by Aether" (appears FIRST)
           ══════════════════════════════════════════════════════════ */}
       <AnimatePresence>
         {showCredits && (
