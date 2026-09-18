@@ -47,7 +47,7 @@ const LETTER_PARAGRAPHS = [
 
   "So it's my way of wishing to special ones and this might be the last time I'm making this 🥀 (ig?). Also sorry for taking your photos without your consent 😝.",
 
-  "And don't start with Call me didi just cause you are 1yr older than me 😒. Chachi, you may be older than me in age but you'll still be a chirkut (Duckling, cute one though) 🐥. Now, say 'I'm the best!' and go enjoy your day.",
+  "And don't start with Call me didi just cause you are 1month older than me 😒. Chachi, you may be older than me in age but you'll still be a bandariya (Monkey, cute one though). Now, say 'I'm the best!' and go enjoy your day.",
 
   "I really don't know what else to say. I'm just grateful and ik it may kinda sound cringee? If so, really solly. I'm juust a geek I guess hehehehe!",
 
